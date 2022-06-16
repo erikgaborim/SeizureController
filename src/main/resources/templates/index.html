@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Controle de Apreensões</title>
+
+<link rel="stylesheet" th:href="@{/bootstrap-5.1.3-dist/css/bootstrap.min.css}">
+<script th:src="@{/jquery-3.6.0-dist/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/bootstrap-5.1.3-dist/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+	<div th:replace="fragments/header :: nav"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 class="text-center" th:text="${message}"></h1>
+				
+				<h2>Lista de Apreensões Registradas</h2>
+				<table class="table table-striped table-dark">
+					<thead>
+						<tr>
+							<th class="text-center">ID</th>
+							<th class="text-center">Data</th>
+							<th class="text-center">Descricao</th>
+							<th class="text-center">Produtos</th>
+							<th class="text-center">QRCode</th>
+							<th class="text-center">Excluir Apreensão</th>
+							<th class="text-center">Editar Apreensão</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${apreensoes.empty}">
+							<td colspan="2">Sem apreensões cadastradas</td>
+						</tr>
+						<tr th:each="apreensao : ${apreensoes}">
+							<td align="center"><span th:text="${apreensao.id}"> ID </span></td>
+							<td align="center"><span th:text="${apreensao.data}"> Data </span></td>
+							<td align="center"><span th:text="${apreensao.descricao}"> Descrição </span></td>
+							<td align="center">
+								<a class="btn btn-outline-info btn-sm"
+					   			th:href="@{/apreensao/listar/{id}(id=${apreensao.id})}">
+					   				Listar produtos
+					   			</a>
+							</td>
+							<td align="center">
+								<a class="btn btn-outline-success btn-sm" target="_blank"
+					   			th:href="@{/apreensao/qrcode/{id}(id=${apreensao.id})}">
+					   				QRCode
+					   			</a>
+							</td>
+							<td align="center">
+								<a class="btn btn-outline-danger btn-sm" 
+					   			th:href="@{/apreensao/apagar/{id}(id=${apreensao.id})}"
+					   			th:data-confirm-delete="|Você gostaria de excluir a apreensão de ID ${apreensao.id}?|"
+  					   			onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+					   				Excluir
+								</a>
+							</td>
+							<td align="center">
+								<a class="btn btn-outline-primary btn-sm" 
+					   			th:href="@{/apreensao/editar/{id}(id=${apreensao.id})}">
+					   				Editar
+					   			</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h2>Lista de Itens Registrados</h2>
+				<table class="table table-striped table-dark">
+					<thead>
+						<tr>
+							<th class="text-center">ID</th>
+							<th class="text-center">Nome</th>
+							<th class="text-center">Quantidade</th>
+							<th class="text-center">Descricao</th>
+							<th class="text-center">ID Apreensão</th>
+							<th class="text-center">Excluir Item</th>
+							<th class="text-center">Editar Item</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${produtos.empty}">
+							<td colspan="2">Sem apreensões cadastradas</td>
+						</tr>
+						<tr th:each="produto : ${produtos}">
+							<td align="center"><span th:text="${produto.id}"> ID </span></td>
+							<td align="center"><span th:text="${produto.nome}"> Nome </span></td>
+							<td align="center"><span th:text="${produto.quantidade}"> Quantidade </span></td>
+							<td align="center"><span th:text="${produto.descricao}"> Descrição </span></td>
+							<td align="center"><span th:each="apreensao : ${produto.apreensao}" th:text="${apreensao.id}">
+							Apreensao </span></td>
+							<td align="center">
+								<a class="btn btn-outline-danger btn-sm"
+					   			th:href="@{/produto/apagar/{id}(id=${produto.id})}"
+					   			th:data-confirm-delete="|Você gostaria de excluir ${produto.nome}?|"
+  					   			onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+					   				Excluir
+								</a>
+							</td>
+							<td align="center">
+								<a class="btn btn-outline-primary btn-sm" 
+					   			th:href="@{/produto/editar/{id}(id=${produto.id})}">
+					   				Editar
+					   			</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>	
+</body>
