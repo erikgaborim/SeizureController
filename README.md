@@ -1,20 +1,20 @@
 <div align="center">
-  <h1>Code Reader</h1>
-  <p>Leitor de QRCode</p>
+  <h1>Seizure Controller</h1>
+  <p>To register and controll products and seizures</p>
 </div>
 
 <div align="right">
   <h3><a href="https://www.github.com/erikgaborim" target="_blank">Erik Gaborim</a> e <a href="https://www.gitlab.com/EduardoMCintra" target="_blank">Eduardo Maia</a>
 </div>
 
-## Status
+## What's the project?
+  
+Application developed to simulate a system to controll product seizures made by the police
 
-Em desenvolvimento
-
-## Do que se trata o projeto
-
-Sistema feito para a receita federal que permite o registro de uma apreensão e seus produtos, sendo que toda a vez que um produto/item é registrado, um QRCode é gerado. A partir disso, é possível vincular um ou mais produtos a uma apreensão.
-
-## TODO:
-
-- Página para vincular produtos com apreensão.
+## How can I use it?
+  
+1. Create a Database (preferably with postgres, because it's already configured) with the command CREATE DATABASE *database_name*;
+2. In the project, change the file "application.properties", adding there the your database's name and password in the indicated places;
+3. Run the project;
+4. Then, open in your browser the system server's port 8080 and just create products and seizures;
+5. To read the QR Code of each seizure, install the app Seizure QRCode Reader.
