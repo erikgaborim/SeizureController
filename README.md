@@ -22,7 +22,9 @@ Application developed to simulate a system to controll product seizures made by 
 ## Tecnologies used
   
 <div align="center">
-  <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+  <img height="55" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+  &ensp;&nbsp;&emsp;
+  <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg">
   &ensp;&nbsp;&emsp;
   <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original-wordmark.svg">
   &ensp;&nbsp;&emsp;
