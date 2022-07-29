@@ -18,7 +18,7 @@ Application developed to simulate a system to controll product seizures made by 
 3. In the project, change the file "resources/application.properties", adding there your database's name and password in the indicated places;
 4. Run the project;
 5. Then, open in your browser the system server's port 8080 and just create products and seizures;
-6. To read the QR Code of each seizure, install the app <a href="https://www.github.com/erikgaborim/SeizureQRCodeReader" >SeizureQRCodeReader</a>.
+6. To read the QRCode of each seizure, install the app <a href="https://www.github.com/erikgaborim/SeizureQRCodeReader" >SeizureQRCodeReader</a>.
 
 ## Tecnologies used
   
