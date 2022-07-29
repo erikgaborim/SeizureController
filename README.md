@@ -11,7 +11,7 @@
   
 Application developed to simulate a system to controll product seizures made by the police
 
-## Settings to use it?
+## Settings to use it
   
 1. Create a Database (preferably with postgres, because it's already configured) with the command CREATE DATABASE *database_name*;
 2. Open the project in your IDE as a Maven project;
